@@ -5,28 +5,49 @@ inquirer
   .prompt([
     {
       type: 'input',
-      name: 'name',
-      message: 'What is your name?',
+      name: 'Title',
+      message: 'What is the name of your project?',
     },
     {
       type: 'input',
-      message: 'Where do you live?',
-      name: 'location',
+      name: 'Description',
+      message: 'Provide a Description of your project:',
+    },
+    {
+      type: 'list',
+      name: 'License',
+      message: 'Choose the license for your project:',
+      choise: [MIT, APACHE 2.0, GPL 3.0, BSD 3, NONE],
     },
     {
       type: 'input',
-      message: 'Tell me about yourself?',
-      name: 'bio',
+      name: 'Installation Instructions',
+      message: '',
+    },
+    {
+      type: 'input',
+      name: 'Usage Information',
+      message: '',
+    },
+    {
+      type: 'input',
+      name: 'Contribution Guidelines',
+      message: '',
+    },
+    {
+      type: 'input',
+      name: 'Test Instructions',
+      message: '',
     },
     {
         type: 'input',
-        message: 'LinkedIn URL',
-        name: 'LinkedIn',
+        name: 'Email',
+        message: 'What is your email?',
         },
     {
         type: 'input',
-        message: 'GitHub URL',
         name: 'GitHub',
+        message: 'What is your GitHub username?',
         },
   ])
   .then((answers) => {
@@ -50,6 +71,36 @@ inquirer
             <p class="text-center">GitHub: ${answers.GitHub}</p>
         </body>
     </html>`)
+
+    readMe = (`# ${answers.Title}  
+    
+    ## Installations:
+    
+
+      
+    ## Description:
+    
+    ${answers.Description}
+    
+    ## Usage:
+
+
+    ## Contributing:
+    
+    
+
+    ## License: 
+    
+    ${answers.License}    
+    
+    ## Tests:
+    
+    
+    
+    ## Questions:
+    If you have any questions email me at:${answers.Email}
+    If you want to contribute to the repository you can at github.com/${answers.GitHUb}
+    `)
 ​
     fs.writeFile('index.html', html, function(err){
         if (err) throw err;
