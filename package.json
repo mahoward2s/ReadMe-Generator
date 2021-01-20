@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mahoward2s/ReadMe-Generator/issues"
   },
-  "homepage": "https://github.com/mahoward2s/ReadMe-Generator#readme"
+  "homepage": "https://github.com/mahoward2s/ReadMe-Generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
 }
