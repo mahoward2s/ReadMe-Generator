@@ -54,12 +54,6 @@ const promptUser = () =>
     },
   ]);
 
-/* .then((answers) => {
-
- console.log(answers)
-
- readMe = (*/
-
 const generateREADME = (answers) =>
   `# ${answers.Title}  
     
@@ -90,14 +84,6 @@ const generateREADME = (answers) =>
     If you have any questions email me at:${answers.Email}
     If you want to contribute to the repository you can at github.com/${answers.GitHUb}
     `
-
-  /*fs.writeFile('README.md', readMe, function (err) {
-    if (err) throw err;
-    console.log('Saved!');
-  })
-
-});*/
-
   promptUser()
     .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
     .then(() => console.log("Succesfully wrote README.md"))
