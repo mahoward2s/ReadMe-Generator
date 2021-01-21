@@ -1,8 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-​
-inquirer
-  .prompt([
+const util = require('util');
+
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const promptUser = () =>
+  inquirer.prompt([
     {
       type: 'input',
       name: 'Title',
@@ -17,11 +20,11 @@ inquirer
       type: 'list',
       name: 'License',
       message: 'Choose the license for your project:',
-      choise: [MIT, APACHE 2.0, GPL 3.0, BSD 3, NONE],
+      choise: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "NONE"],
     },
     {
       type: 'input',
-      name: 'Installation Instructions',
+      name: 'Installation',
       message: 'default npm i',
     },
     {
@@ -37,27 +40,31 @@ inquirer
     {
       type: 'input',
       name: 'Test Instructions',
-      message: '',
+      message: 'default node index.js',
     },
     {
-        type: 'input',
-        name: 'Email',
-        message: 'What is your email?',
-        },
+      type: 'input',
+      name: 'Email',
+      message: 'What is your email?',
+    },
     {
-        type: 'input',
-        name: 'GitHub',
-        message: 'What is your GitHub username?',
-        },
-  ])
-  .then((answers) => {
-​
-    console.log(answers)
+      type: 'input',
+      name: 'GitHub',
+      message: 'What is your GitHub username?',
+    },
+  ]);
 
-    readMe = (`# ${answers.Title}  
+/* .then((answers) => {
+
+ console.log(answers)
+
+ readMe = (*/
+
+const generateREADME = (answers) =>
+  `# ${answers.Title}  
     
     ## Installations:
-    
+    ${answers.Installation}
 
       
     ## Description:
@@ -82,11 +89,16 @@ inquirer
     ## Questions:
     If you have any questions email me at:${answers.Email}
     If you want to contribute to the repository you can at github.com/${answers.GitHUb}
-    `)
-​
-    fs.writeFile('README.md', readMe, function(err){
-        if (err) throw err;
-        console.log('Saved!');
-    })
-​
-  });
+    `
+
+  /*fs.writeFile('README.md', readMe, function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+  })
+
+});*/
+
+  promptUser()
+    .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
+    .then(() => console.log("Succesfully wrote README.md"))
+    .catch((err) => console.error(err));
