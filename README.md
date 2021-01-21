@@ -1,15 +1,18 @@
 # ReadMe-Generator
 
 ## Link:  
-
+https://github.com/mahoward2s/ReadMe-Generator
 
 ## Technologies:
 ```
+inquirer npm
+javascript
 
 ```
 
 ## Description:
 ```
+An application to generator a professional README.md file
 
 ```
 ## What To Expect:
@@ -19,6 +22,7 @@
 
 ## License: 
 ```
+MIT
 
 ```
 
@@ -29,5 +33,6 @@
 
 ## Contact:
 ```
+GitHub Profile: mahoward2s
 
 ```
