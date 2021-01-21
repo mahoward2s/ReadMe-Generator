@@ -17,30 +17,30 @@ const promptUser = () =>
       message: 'Provide a Description of your project:',
     },
     {
-      type: 'list',
+      type: 'checkbox',
       name: 'License',
-      message: 'Choose the license for your project:',
-      choise: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "NONE"],
+      message: 'What license?',
+      choices: ['MIT', 'APACHE', 'GPL', 'BSD', 'NONE'],
     },
     {
       type: 'input',
       name: 'Installation',
-      message: 'default npm i',
+      message: 'Default installation is: npm i',
     },
     {
       type: 'input',
-      name: 'Usage Information',
-      message: '',
+      name: 'Usage',
+      message: 'How to use your project:',
     },
     {
       type: 'input',
-      name: 'Contribution Guidelines',
-      message: '',
+      name: 'Contribution',
+      message: 'How can others contribute to your project?',
     },
     {
       type: 'input',
-      name: 'Test Instructions',
-      message: 'default node index.js',
+      name: 'Test',
+      message: 'Default test instructions: node index.js',
     },
     {
       type: 'input',
@@ -66,11 +66,11 @@ const generateREADME = (answers) =>
     ${answers.Description}
     
     ## Usage:
-
+    ${answers.Usage}
 
     ## Contributing:
     
-    
+    ${answers.Contribution}
 
     ## License: 
     
@@ -78,7 +78,7 @@ const generateREADME = (answers) =>
     
     ## Tests:
     
-    
+    ${answers.Test}
     
     ## Questions:
     If you have any questions email me at:${answers.Email}
