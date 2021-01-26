@@ -83,6 +83,7 @@ const generateREADME = (answers) =>
 
   ## License: 
   ${answers.License}   
+  ${generateLicense(answers)}
 
   ## Contributing:
    ${answers.Contribution} 
