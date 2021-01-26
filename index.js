@@ -55,36 +55,44 @@ const promptUser = () =>
   ]);
 
 const generateREADME = (answers) =>
-  `# ${answers.Title}  
-    
-    ## Installations:
-    ${answers.Installation}
+  `# ${answers.Title} 
 
-      
-    ## Description:
-    
-    ${answers.Description}
-    
-    ## Usage:
-    ${answers.Usage}
+  ## Table of Contents
+  - [Description](#description)
+  - [What To Expect](#what-to-expect)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  
+  ## Description:
+  ${answers.Description}
 
-    ## Contributing:
-    
-    ${answers.Contribution}
+  ## What To Expect:
+  (Insert GIF Functionality or Image here)
 
-    ## License: 
-    
-    ${answers.License}    
-    
-    ## Tests:
-    
-    ${answers.Test}
-    
-    ## Questions:
-    If you have any questions email me at:${answers.Email}
-    If you want to contribute to the repository you can at github.com/${answers.GitHUb}
+  ## Installations:
+  ${answers.Installation}
+
+  ## Usage:
+  ${answers.Usage}
+
+  ## License: 
+  ${answers.License}   
+  
+  ## Contributing:
+   ${answers.Contribution} 
+
+  ## Tests:
+  ${answers.Test}
+
+  ## Questions:
+  If you have any questions email me at:${answers.Email}
+  If you want to contribute to the repository you can at github.com/${answers.GitHUb}
     `
-  promptUser()
-    .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
-    .then(() => console.log("Succesfully wrote README.md"))
-    .catch((err) => console.error(err));
+promptUser()
+  .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
+  .then(() => console.log("Succesfully wrote README.md"))
+  .catch((err) => console.error(err));
