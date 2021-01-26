@@ -57,6 +57,8 @@ const promptUser = () =>
 const generateREADME = (answers) =>
   `# ${answers.Title} 
 
+  ${generateLicense(answers)}
+
   ## Table of Contents
   - [Description](#description)
   - [What To Expect](#what-to-expect)
@@ -81,7 +83,7 @@ const generateREADME = (answers) =>
 
   ## License: 
   ${answers.License}   
-  
+
   ## Contributing:
    ${answers.Contribution} 
 
@@ -92,6 +94,22 @@ const generateREADME = (answers) =>
   If you have any questions email me at:${answers.Email}
   If you want to contribute to the repository you can at github.com/${answers.GitHUb}
     `
+
+function generateLicense(answers) {
+
+  if (answers.license == 'MIT') {
+    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+  } else if (answers.license == 'APACHE') {
+    return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+  } else if (answers.license == 'GPL') {
+    return "[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)"
+  } else if (answers.license == 'BSD') {
+    return "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
+  } else {
+    return "NONE"
+  }
+}
+
 promptUser()
   .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
   .then(() => console.log("Succesfully wrote README.md"))
