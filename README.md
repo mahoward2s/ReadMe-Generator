@@ -1,38 +1,43 @@
 # ReadMe-Generator
 
-## Link:  
-https://github.com/mahoward2s/ReadMe-Generator
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Technologies:
-```
-inquirer npm
-javascript
+## Table of Contents
+- [Description](#description)
+- [What To Expect](#what-to-expect)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-```
+## What To Expect
 
-## Description:
-```
+The following animation demonstrates the application functionality:
+
+![My-Team-Generator](./images/myteamgenerator.gif.gif)
+![image](https://user-images.githubusercontent.com/70785957/106366273-51e45380-6300-11eb-925d-2a578895a3f2.png)
+
+## Description
 An application to generator a professional README.md file
 
-```
-## What To Expect:
-![image](https://user-images.githubusercontent.com/70785957/105412585-9124ed00-5bfa-11eb-8d07-2770c6a8c38c.png)
+## Installation
+Link to website:
+https://github.com/mahoward2s/ReadMe-Generator
 
-![Portfolio](./assets/images/README-Generator.gif)
+## Usage 
+The application will prompt the user for information about the project and then the information will be generated into a README.md file.
 
-## License: 
-```
-MIT
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-```
+## Contributing
+Feel free to fork and improve!
 
-## Credit:
-```
+## Tests
+N/A
 
-```
-
-## Contact:
-```
-GitHub Profile: mahoward2s
-
-```
+## Questions?
+- Mahoward2s: https://github.com/mahoward2s
+- mahoward2s@gmail.com
