@@ -16,8 +16,7 @@
 
 The following animation demonstrates the application functionality:
 
-![My-Team-Generator](./images/myteamgenerator.gif.gif)
-![image](https://user-images.githubusercontent.com/70785957/106366273-51e45380-6300-11eb-925d-2a578895a3f2.png)
+![ReadMe-Generator](./assets/images/newReadme.gif)
 
 ## Description
 An application to generator a professional README.md file
